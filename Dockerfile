@@ -15,7 +15,7 @@ RUN echo "$HOSTNAME" > /etc/hostname \
         rsyslog \
     && rm -rf /var/lib/apt/lists/* \
     && sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf \
-    && sed -i 's/^\(.\+|\/dev\/xconsole\)$/#\1/' /etc/rsyslog.conf
+    && sed -i 's/\/dev\/xconsole/\/dev\/stdout/' /etc/rsyslog.conf
 
 ENV HOSTNAME="mail" \
     DOMAIN="example.com" \

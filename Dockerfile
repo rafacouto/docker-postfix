@@ -21,7 +21,7 @@ ENV HOSTNAME="mail" \
     DOMAIN="example.com" \
     MY_NETWORKS="127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128"
 
-CMD ["/usr/bin/supervisord", "-c /root/supervisord.conf"]
+CMD ["/usr/bin/python"; "/usr/bin/supervisord", "-c /root/supervisord.conf"]
 
 ADD assets/* /root/
 

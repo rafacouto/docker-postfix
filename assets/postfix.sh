@@ -8,16 +8,7 @@ postconf -e mydestination="localhost, $myhostname, $mydomain"
 postconf -Me submission/inet="submission inet n - - - - smtpd"
 
 postconf 
+postfix -c /etc/postfix start
 
-cat > /etc/supervisor/conf.d/10-rsyslog.conf <<EOF
-[program:rsyslog]
-command=/usr/sbin/rsyslogd -n
-EOF
-
-cat > /etc/supervisor/conf.d/20-postfix.conf <<EOF
-[program:postfix]
-command=/usr/sbin/postfix -c /etc/postfix start
-EOF
-
-/usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+tail -f /var/log/mail.log
 

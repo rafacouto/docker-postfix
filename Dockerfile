@@ -21,7 +21,7 @@ ENV HOSTNAME="mail" \
     DOMAIN="example.com" \
     MY_NETWORKS="127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128"
 
-ADD entrypoint.sh /opt/docker/
+CMD ["/usr/bin/supervisord", "-c /root/supervisord.conf"]
 
-ENTRYPOINT ["/bin/bash", "/opt/docker/entrypoint.sh"]
+ADD assets/* /root/
 

@@ -7,8 +7,7 @@ postconf -e mail_spool_directory="/var/spool/mail/"
 postconf -e mydestination="localhost, $myhostname, $mydomain"
 postconf -Me submission/inet="submission inet n - - - - smtpd"
 
-postconf 
 postfix -c /etc/postfix start
 
-tail -f /var/log/mail.log
+tail -f /var/log/mail.log | iconv --to-code=UTF8
 

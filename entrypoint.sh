@@ -4,6 +4,8 @@ postconf -e myhostname="$HOSTNAME.$DOMAIN"
 postconf -e mydomain="$DOMAIN"
 postconf -e smtpd_banner="\$myhostname ESMTP"
 postconf -e mail_spool_directory="/var/spool/mail/"
+postconf -Me submission/inet="submission inet n - - - - smtpd"
+
 postconf 
 
 cat > /etc/supervisor/conf.d/10-rsyslog.conf <<EOF

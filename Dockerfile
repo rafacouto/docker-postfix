@@ -13,8 +13,8 @@ RUN echo "$HOSTNAME" > /etc/hostname \
         supervisor \
         postfix \
         rsyslog \
+        mailutils \
     && rm -rf /var/lib/apt/lists/* \
-    && cp /etc/resolv.conf /etc/services /var/spool/postfix/etc \
     && sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf \
     && sed -i 's/\/dev\/xconsole/\/dev\/stdout/' /etc/rsyslog.conf
 

@@ -25,7 +25,10 @@ Available [image tags here](https://hub.docker.com/r/caligari/postfix/tags/).
 
 Start SMTP service and expose it at port 25:
 
-    docker run -d --name mailserver -p 25:25 -e DOMAIN=example.com caligari/postfix
+    docker run --detach --name mailserver \
+        -p 25:25 \
+        -e DOMAIN=mydomain.com \
+        caligari/postfix
 
 
 ## Docker variables

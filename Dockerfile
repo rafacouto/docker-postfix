@@ -1,5 +1,5 @@
 
-FROM debian:jessie
+FROM debian:stretch-slim
 
 MAINTAINER Rafa Couto <caligari@treboada.net> 
 
